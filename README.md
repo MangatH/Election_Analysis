@@ -31,6 +31,7 @@ The analysis of the election show that:
 ## Election-Audit Summary
 The challenge revolved around writing a python script to show the election result by running an election audit ,as what is expected by the Colorado Board of Elections employee and then writing the election results to a text file, in order to have a clear glance on the election results. It will make things more convenient, as for someone to just know the results by looking at the text file and not inspecting and looking at the code all over again,it is quite time saving. 
 The same python script can be used to analyse the results of various elections.
+
 '''
 
 # Add our dependencies.
@@ -205,7 +206,7 @@ However, certain changes are recommended when running the script for other elect
       # Add a variable to save the file to a path.
       file_to_save =("election_analysis.txt")
       '''
-    The code can be modified by updating the name of the to be loaded, which is "election_results.csv" here,     it can have other name too, depending on type of election.
+    The code can be modified by updating the name of the to be loaded, which is "election_results.csv" here, it can have other name too, depending on type of election.
 
     2. '''
         # Print the final vote count (to terminal)
@@ -217,7 +218,7 @@ However, certain changes are recommended when running the script for other elect
         f"County Votes:\n")
     print(election_results, end="")
     '''
-    The code for 'f' function can be modified depending on what is the desired outcome that one wants to         print.
+    The code for 'f' function can be modified depending on what is the desired outcome that one wants to   print.
 
 ## Conclusion:
 Through this challenge, it was found evident that the Candidate 2: Diana DeGette, won the election by receiving 73.8% votes. This analysis was possible by using functions such as 'for' to iterate through the data and knowing the total votes. Furthermore, using an 'if' function to check certain conditions. At the end using the 'print' function to print the results to the terminal. 
