@@ -15,25 +15,24 @@ The overall purpose of the election audit analysis is to fulfill the following t
 ## Election-Audit Results
 
 The analysis of the election show that:
-"*" There were 369,711 votes cast in the election.
-"*" The candidates were:
-    "*" Candidate 1: Charles Casper Stockham
-    "*" Candidate 2: Diana DeGette
-    "*" Candidate 3: Raymon Anthony Doane
-"*" The candidate results were:
-    "*" Candidate 1:Charles Casper Stockham, received 23% of the vote and 85,213 number of votes
-    "*" Candidate 2:Diana DeGette received, 73.8% of the vote and 272,892 number of votes.
-    "*" Candidate 3:Raymon Anthony Doane ,received 3.1% of the vote and 11,606 number of votes.
-"*" Candidate 2: Diana DeGette had the largest number of votes i.e. 272,892.
-"*" The winner of the election was:
-    Candidate 2:Diana DeGette, who received 73.8% of the vote and 272,892 number of votes.
+* There were 369,711 votes cast in the election.
+* The candidates were:
+    1. Candidate 1: Charles Casper Stockham
+    2. Candidate 2: Diana DeGette
+    3. Candidate 3: Raymon Anthony Doane
+* The candidate results were:
+    1. Candidate 1:Charles Casper Stockham, received 23% of the vote and 85,213 number of votes
+    2. Candidate 2:Diana DeGette received, 73.8% of the vote and 272,892 number of votes.
+    3. Candidate 3:Raymon Anthony Doane ,received 3.1% of the vote and 11,606 number of votes.
+* Candidate 2: Diana DeGette had the largest number of votes i.e. 272,892.
+* The winner of the election was:
+    -Candidate 2:Diana DeGette, who received 73.8% of the vote and 272,892 number of votes.
 
 ## Election-Audit Summary
 The challenge revolved around writing a python script to show the election result by running an election audit ,as what is expected by the Colorado Board of Elections employee and then writing the election results to a text file, in order to have a clear glance on the election results. It will make things more convenient, as for someone to just know the results by looking at the text file and not inspecting and looking at the code all over again,it is quite time saving. 
 The same python script can be used to analyse the results of various elections.
 
 '''
-
 # Add our dependencies.
 import csv
 import os
