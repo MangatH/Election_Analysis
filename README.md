@@ -42,6 +42,7 @@ The challenge revolved around writing a python script to show the election resul
 The same python script can be used to analyse the results of various elections.
 
 '''
+
  # Add our dependencies.
 import csv
 import os
@@ -227,6 +228,6 @@ However, certain changes are recommended when running the script for other elect
     The print function can be modified depending on what is the desired outcome that one wants to print.
 
 ## Conclusion:
-Through this challenge, it was found evident that the Candidate 2: Diana DeGette, won the election by receiving 73.8% votes. This analysis was possible by using functions such as 'for' to iterate through the data and knowing the total votes. Furthermore, using an 'if' function to check certain conditions. At the end using the 'print' function to print the results to the terminal. 
+Through this challenge, it was found evident that the **Candidate 2: Diana DeGette**, won the election by receiving **73.8% votes**. This analysis was possible by using functions such as **'for'** to iterate through the data and knowing the total votes. Furthermore, using an **'if'** function to check certain conditions. At the end using the **'print'** function to print the results to the terminal. 
 
-Taking one step further, by writing the outcomes to a text file by using the function 'write', in order to make the results readable for everyone without going through the code again and again.
+Taking one step further, by writing the outcomes to a text file by using the function **'write'**, in order to make the results readable for everyone without going through the code again and again.
