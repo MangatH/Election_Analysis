@@ -16,12 +16,21 @@ The overall purpose of the election audit analysis is to fulfill the following t
 
 The analysis of the election show that:
 * There were 369,711 votes cast in the election.
+* The counties were:
+    1. Jefferson
+    2. Denver
+    3. Arapahoe
+* Number of votes and the percentage of total votes for each county:
+    1. Jefferson: 38,855 votes (10.5%)
+    2. Denver: 306,055 votes (82.8%)
+    3. Arapahoe: 24,801 votes (6.7%)
+* The county Denver had the largest number of votes.
 * The candidates were:
     1. Candidate 1: Charles Casper Stockham
     2. Candidate 2: Diana DeGette
     3. Candidate 3: Raymon Anthony Doane
 * The candidate results were:
-    1. Candidate 1:Charles Casper Stockham, received 23% of the vote and 85,213 number of votes
+    1. Candidate 1:Charles Casper Stockham, received 23% of the vote and 85,213 number of votes.
     2. Candidate 2:Diana DeGette received, 73.8% of the vote and 272,892 number of votes.
     3. Candidate 3:Raymon Anthony Doane ,received 3.1% of the vote and 11,606 number of votes.
 * Candidate 2: Diana DeGette had the largest number of votes i.e. 272,892.
@@ -33,14 +42,15 @@ The challenge revolved around writing a python script to show the election resul
 The same python script can be used to analyse the results of various elections.
 
 '''
+
 # Add our dependencies.
 import csv
 import os
 
 # Add a variable to load a file from a path.
-file_to_load =("election_results.csv")
+file_to_load = os.path.join("election_results.csv")
 # Add a variable to save the file to a path.
-file_to_save =("election_analysis.txt")
+file_to_save = os.path.join("election_analysis.txt")
 
 # Initialize a total vote counter.
 total_votes = 0
@@ -50,7 +60,7 @@ candidate_options = []
 candidate_votes = {}
 
 # 1: Create a county list and county votes dictionary.
-county_names = []
+county_list = []
 county_votes = {}
 
 
@@ -60,8 +70,9 @@ winning_count = 0
 winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
-largest_county_turnout = ""
-largest_county_voter = 0
+winning_county = ""
+winning_county_votes = 0
+winning_county_percentage = 0
 
 
 # Read the csv and convert it into a list of dictionaries
@@ -99,11 +110,11 @@ with open(file_to_load) as election_data:
 
         # 4a: Write an if statement that checks that the
         # county does not match any existing county in the county list.
-        if county_name not in county_names:
+        if county_name not in county_list:
 
 
             # 4b: Add the existing county to the list of counties.
-            county_names.append(county_name)
+            county_list.append(county_name)
 
 
             # 4c: Begin tracking the county's vote count.
@@ -112,7 +123,6 @@ with open(file_to_load) as election_data:
 
         # 5: Add a vote to that county's vote count.
         county_votes[county_name] += 1
-
 
 
 # Save the results to our text file.
@@ -130,36 +140,35 @@ with open(file_to_save, "w") as txt_file:
     txt_file.write(election_results)
 
     # 6a: Write a for loop to get the county from the county dictionary.
-    for county in county_votes:
+    for county_name in county_votes:
         # 6b: Retrieve the county vote count.
-        county_vote = county_votes[county]
+        county_vote = county_votes.get(county_name)
         # 6c: Calculate the percentage of votes for the county.
-        county_percent = int(county_votes)/int(total_votes)* 100
-
+        county_percent = float(county_vote) / float(total_votes)* 100
          # 6d: Print the county results to the terminal.
         county_results = (
-            "{county}: {county_percent:.1f}%: {county_votes}\n"
-              )
-
+            f"{county_name}: {county_percent:.1f}%: {county_vote}\n")
+        print(county_results)
          # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
 
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (county_vote > largest_county_vote):
-            largest_county_vote = county_vote
-            largest_county_turnout = county
+        if (county_vote > winning_county_votes) and (county_percent > winning_county_percentage):
+            winning_county_votes = county_vote
+            winning_county = county_name
+            winning_county_percentage = county_percent
 
     # 7: Print the county with the largest turnout to the terminal.
-    largest_county_turnout = (
+    winning_county_summary = (
         f"----------------------\n"
-        f"Largest County Turnout {largest_county_turnout}\n"
+        f"Largest County Turnout: {winning_county}\n"
         f"-----------------------\n"
-        )
-    print(largest_county_turnout)
+    )
+    print(winning_county_summary)
 
     # 8: Save the county with the largest turnout to a text file.
-    txt_file.write(largest_county_turnout)
+    txt_file.write(winning_county_summary)
 
 
     # Save the final candidate vote count to the text file.
@@ -201,11 +210,11 @@ However, certain changes are recommended when running the script for other elect
     
     1.'''
       # Add a variable to load a file from a path.
-      file_to_load =("election_results.csv")
+      file_to_load = os.path.join("election_results.csv")
       # Add a variable to save the file to a path.
-      file_to_save =("election_analysis.txt")
+      file_to_save = os.path.join("election_analysis.txt")
       '''
-    The code can be modified by updating the name of the to be loaded, which is "election_results.csv" here, it can have other name too, depending on type of election.
+    The code can be modified by updating the name of the file to be loaded, which is "election_results.csv" here, it can have other name too, depending on type of election. Further, the path to open the file can be modified as per the location of the file in the system.
 
     2. '''
         # Print the final vote count (to terminal)
@@ -217,7 +226,7 @@ However, certain changes are recommended when running the script for other elect
         f"County Votes:\n")
     print(election_results, end="")
     '''
-    The code for 'f' function can be modified depending on what is the desired outcome that one wants to   print.
+    The print function can be modified depending on what is the desired outcome that one wants to print.
 
 ## Conclusion:
 Through this challenge, it was found evident that the Candidate 2: Diana DeGette, won the election by receiving 73.8% votes. This analysis was possible by using functions such as 'for' to iterate through the data and knowing the total votes. Furthermore, using an 'if' function to check certain conditions. At the end using the 'print' function to print the results to the terminal. 
