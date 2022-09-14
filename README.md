@@ -42,8 +42,7 @@ The challenge revolved around writing a python script to show the election resul
 The same python script can be used to analyse the results of various elections.
 
 '''
-
-# Add our dependencies.
+ # Add our dependencies.
 import csv
 import os
 
@@ -203,7 +202,6 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
-
 '''
 
 However, certain changes are recommended when running the script for other elections. These are:
