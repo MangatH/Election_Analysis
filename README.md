@@ -43,19 +43,19 @@ The same python script can be used to analyse the results of various elections.
 
 '''
 
- # Add our dependencies.
+ # Add our dependencies
 import csv
 import os
 
-# Add a variable to load a file from a path.
+# Add a variable to load a file from a path
 file_to_load = os.path.join("election_results.csv")
 # Add a variable to save the file to a path.
 file_to_save = os.path.join("election_analysis.txt")
 
-# Initialize a total vote counter.
+# Initialize a total vote counter
 total_votes = 0
 
-# Candidate Options and candidate votes.
+# Candidate Options and candidate votes
 candidate_options = []
 candidate_votes = {}
 
@@ -125,8 +125,8 @@ with open(file_to_load) as election_data:
         county_votes[county_name] += 1
 
 
-# Save the results to our text file.
-with open(file_to_save, "w") as txt_file:
+ # Save the results to our text file
+ with open(file_to_save, "w") as txt_file:
 
     # Print the final vote count (to terminal)
     election_results = (
