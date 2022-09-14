@@ -1,4 +1,4 @@
-# Election_Analysis
+# Election_Audit
 
 ## Overview of Election Audit
 The overall purpose of the election audit analysis is to fulfill the following tasks to complete the election audit of a recent local congressional election.
